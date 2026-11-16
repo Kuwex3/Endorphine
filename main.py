@@ -25,7 +25,7 @@ output = QAudioOutput()
 player.setAudioOutput(output)
 
 player.setSource(QUrl.fromLocalFile("song.mp3"))
-output.setVolume(0.5)
+output.setVolume(1)
 player.play()
 
 app.exec()
