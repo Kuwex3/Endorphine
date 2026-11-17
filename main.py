@@ -4,28 +4,36 @@ from PySide6.QtCore import QUrl
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtCore import QTimer
 
+from PySide6.QtWidgets import QApplication, QLabel
+
 import sys
 import signal
 
-app = QCoreApplication(sys.argv)
+app  = QApplication(sys.argv)
+label = QLabel("Endorphine")
+label.show()
 
-timer = QTimer()
-timer.timeout.connect(lambda: None)
-timer.start(200)
+# app_core = QCoreApplication(sys.argv)
 
-def shutdown(signum, frame):
-    player.stop()
-    app.quit()
+# timer = QTimer()
+# timer.timeout.connect(lambda: None)
+# timer.start(200)
 
-signal.signal(signal.SIGINT, shutdown)
+# def shutdown(signum, frame):
+#     player.stop()
+#     app_core.quit()
+#     app.quit()
 
-player = QMediaPlayer()
-output = QAudioOutput()
+# signal.signal(signal.SIGINT, shutdown)
 
-player.setAudioOutput(output)
+# player = QMediaPlayer()
+# output = QAudioOutput()
 
-player.setSource(QUrl.fromLocalFile("song.mp3"))
-output.setVolume(1)
-player.play()
+# player.setAudioOutput(output)
 
+# player.setSource(QUrl.fromLocalFile("song.mp3"))
+# output.setVolume(1)
+# player.play()
+
+# app_core.exec()
 app.exec()
